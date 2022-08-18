@@ -129,6 +129,7 @@ getEle("btnThem").onclick = function () {
   document.getElementById("tknv").disabled = false;
   getEle("btnCapNhat").style.display = "none";
   resetForm();
+  
 };
 function resetForm() {
   getEle("tknv").value = "";
@@ -140,6 +141,17 @@ function resetForm() {
   // getEle("chucvu").value = "Chọn chức vụ" ;
   getEle("gioLam").value = "";
 }
+
+getEle("btnDong").addEventListener("click", function(){
+  getEle("tbTKNV").style.display = "none";
+  getEle("tbTen").style.display = "none";
+  getEle("tbEmail").style.display = "none";
+  getEle("tbMatKhau").style.display = "none";
+  getEle("tbNgay").style.display = "none";
+  getEle("tbLuongCB").style.display = "none";
+  getEle("tbChucVu").style.display = "none";
+  getEle("tbGiolam").style.display = "none";
+})
 
 getEle("btnThemNV").addEventListener("click", function () {
   var nhanVien = layThongTinNV(true);
@@ -203,7 +215,7 @@ function suaNV(taiKhoan) {
   var nv = dsnv._layThongTinNV(taiKhoan);
   if (nv) {
     //Dom tới các thẻ input show value
-    
+
     getEle("tknv").disabled = true;
     getEle("btnThemNV").style.display = "none";
     getEle("btnCapNhat").style.display = "block";
